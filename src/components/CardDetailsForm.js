@@ -35,7 +35,7 @@ const CardDetailsForm = () => {
       }}
       validationSchema={Yup.object({
         firstName: Yup.string()
-          .required("Can't be blank")
+          .required('Name is required')
           .test(
             'test-number',
             'Name is invalid',
