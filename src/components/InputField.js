@@ -34,7 +34,7 @@ const InputField = ({ label, fieldType, ...props }) => {
           {...field}
           {...props}
           className={classNames(
-            'block transition ease-in-out bg-white border rounded-lg form-control  focus:outline-none focus:rounded-lg placeholder:text-deep-violet-300 placeholder:text-opacity-25 placeholder:font-medium placeholder:leading-6 placeholder:text-lg pl-4',
+            'block transition ease-in-out bg-white border rounded-lg form-control  focus:outline-none focus:rounded-lg placeholder:text-deep-violet-300 placeholder:text-opacity-25 placeholder:font-medium placeholder:leading-6 placeholder:text-lg pl-4 text-deep-violet-300 text-lg font-medium leading-6',
             applyStyle(),
             meta.error
               ? 'border-theme-red-800'
@@ -42,7 +42,11 @@ const InputField = ({ label, fieldType, ...props }) => {
           )}
         />
         {fieldType !== 'secondary' && meta.error ? (
-          <span className="block mt-2 text-sm font-semibold leading-4 text-theme-red-800">
+          <span
+            className={classNames(
+              'block mt-2 text-sm font-semibold leading-4 text-theme-red-800'
+            )}
+          >
             {meta.error}
           </span>
         ) : null}
