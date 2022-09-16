@@ -6,7 +6,11 @@ import valid from 'card-validator';
 import InputField from './InputField';
 import Button from './Button';
 import classNames from 'classnames';
-const CardDetailsForm = () => {
+const CardDetailsForm = ({
+  setCardDetails,
+  cardDetails,
+  setShowThankYou,
+}) => {
   const formatAndSetCcNumber = (e) => {
     const inputVal = e.target.value.replace(/ /g, '');
     let inputNumbersOnly = inputVal.replace(/\D/g, '');
@@ -74,8 +78,9 @@ const CardDetailsForm = () => {
       validateOnBlur={false}
       onSubmit={(values, { setSubmitting, resetForm }) => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
+          console.log(values);
           setSubmitting(false);
+          setShowThankYou(true);
           resetForm();
         }, 400);
       }}
@@ -91,9 +96,13 @@ const CardDetailsForm = () => {
                 placeholder="e.g. Jane Appleased"
                 fieldType="primary"
                 value={props.values.firstName}
-                onChange={(e) =>
-                  props.setFieldValue('firstName', e.target.value)
-                }
+                onChange={(e) => {
+                  props.setFieldValue('firstName', e.target.value);
+                  setCardDetails({
+                    ...cardDetails,
+                    firstName: e.target.value,
+                  });
+                }}
               />
             </div>
 
@@ -110,6 +119,10 @@ const CardDetailsForm = () => {
                     'cardNumber',
                     formatAndSetCcNumber(e)
                   );
+                  setCardDetails({
+                    ...cardDetails,
+                    cardNumber: formatAndSetCcNumber(e),
+                  });
                 }}
               />
             </div>
@@ -135,6 +148,10 @@ const CardDetailsForm = () => {
                     value={props.values.month}
                     onChange={(e) => {
                       props.setFieldValue('month', e.target.value);
+                      setCardDetails({
+                        ...cardDetails,
+                        month: e.target.value,
+                      });
                     }}
                   />
 
@@ -148,6 +165,10 @@ const CardDetailsForm = () => {
                     value={props.values.year}
                     onChange={(e) => {
                       props.setFieldValue('year', e.target.value);
+                      setCardDetails({
+                        ...cardDetails,
+                        year: e.target.value,
+                      });
                     }}
                   />
                 </div>
@@ -168,6 +189,10 @@ const CardDetailsForm = () => {
                   value={props.values.cvv}
                   onChange={(e) => {
                     props.setFieldValue('cvv', e.target.value);
+                    setCardDetails({
+                      ...cardDetails,
+                      cvv: e.target.value,
+                    });
                   }}
                 />
               </div>
