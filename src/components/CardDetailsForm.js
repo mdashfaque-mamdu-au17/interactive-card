@@ -78,7 +78,6 @@ const CardDetailsForm = ({
       validateOnBlur={false}
       onSubmit={(values, { setSubmitting, resetForm }) => {
         setTimeout(() => {
-          console.log(values);
           setSubmitting(false);
           setShowThankYou(true);
           resetForm();
