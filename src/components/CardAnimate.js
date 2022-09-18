@@ -9,7 +9,7 @@ const CardAnimate = ({ cardDetails }) => {
     <div>
       <div className="relative">
         {/* For Mobile */}
-        <div className="w-full bg-green-200 lg:hidden">
+        <div className="w-full lg:hidden">
           <img
             src={BackgroundImage}
             className="w-full h-60"
@@ -18,12 +18,71 @@ const CardAnimate = ({ cardDetails }) => {
         </div>
 
         {/* For Desktop */}
-        <div className="hidden lg:block w-[483px] h-screen">
-          <img
-            src={BackgroundImageDesk}
-            alt="background"
-            className="w-[438px h-screen"
-          />
+        <div className="hidden lg:block lg:relative">
+          <div className="w-[350px] xl:w-[483px] h-screen">
+            <img
+              src={BackgroundImageDesk}
+              alt="background"
+              className="w-[438px h-screen"
+            />
+          </div>
+
+          {/* Card Front */}
+
+          <div className="absolute -translate-y-1/2 top-1/2 transfrom">
+            <div className="relative h-[527px] bg-red-200">
+              <div className="w-[447px] h-[245px] absolute left-[50px] xl:left-[164px]">
+                <img
+                  src={CardFront}
+                  alt="card-front"
+                  className="w-[447px] h-[245px]"
+                />
+
+                <div className="absolute top-[28px] left-[32px]">
+                  <img
+                    src={CardLogo}
+                    alt="card-logo"
+                    className="w-[84px] h-[47px]"
+                  />
+                </div>
+
+                <div className="absolute bottom-[70px] left-8">
+                  <p className="text-[28px] font-medium text-white leading-9 tracking-[3.5px]">
+                    {cardDetails?.cardNumber
+                      ? cardDetails?.cardNumber
+                      : '0000 0000 0000 0000'}
+                  </p>
+                </div>
+
+                <div className="absolute bottom-[26.5px] left-8">
+                  <p className="uppercase font-medium text-white text-sm leading-[18px] tracking-[2px]">
+                    {cardDetails?.firstName
+                      ? cardDetails?.firstName
+                      : 'Jane Appleseed'}
+                  </p>
+                </div>
+
+                <div className="absolute bottom-[26.5px] right-[26.5px] ">
+                  <p className="uppercase font-medium text-white text-sm  leading-[18px] tracking-[2px]">
+                    {cardDetails?.month ? cardDetails.month : '00'} /{' '}
+                    {cardDetails?.year ? cardDetails?.year : '00'}
+                  </p>
+                </div>
+              </div>
+
+              <div className="w-[447px] h-[245px] absolute left-[70px] xl:left-[258px] top-[282px]">
+                <img
+                  src={CardBack}
+                  alt="card-back"
+                  className="w-[447px] h-[245px]"
+                />
+
+                <span className="text-sm text-white font-semibold tracking-[2px] leading-[18px] absolute top-[111px] right-[57px]">
+                  {cardDetails?.cvv ? cardDetails?.cvv : '000'}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* For Mobile */}
