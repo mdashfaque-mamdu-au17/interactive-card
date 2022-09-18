@@ -64,7 +64,7 @@ const CardAnimate = ({ cardDetails }) => {
 
                 <div className="absolute bottom-[26.5px] right-[26.5px] ">
                   <p className="uppercase font-medium text-white text-sm  leading-[18px] tracking-[2px]">
-                    {cardDetails?.month ? cardDetails.month : '00'} /{' '}
+                    {cardDetails?.month ? cardDetails.month : '00'}/
                     {cardDetails?.year ? cardDetails?.year : '00'}
                   </p>
                 </div>
@@ -123,7 +123,7 @@ const CardAnimate = ({ cardDetails }) => {
 
               <div className="absolute bottom-5 right-5">
                 <p className="uppercase font-medium text-white text-[9px] leading-[11px] tracking-[1.2px]">
-                  {cardDetails?.month ? cardDetails.month : '00'} /{' '}
+                  {cardDetails?.month ? cardDetails.month : '00'}/
                   {cardDetails?.year ? cardDetails?.year : '00'}
                 </p>
               </div>
