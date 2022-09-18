@@ -33,19 +33,21 @@ function App() {
           <CardAnimate cardDetails={cardDetails} />
         </div>
 
-        {showThankYou ? (
-          <div className="px-6 mt-[91px] flex justify-center">
-            <ThankYou setShowThankYou={setShowThankYou} />
-          </div>
-        ) : (
-          <div className="flex justify-center px-6 mt-[91px]">
-            <CardDetailsForm
-              setCardDetails={setCardDetails}
-              cardDetails={cardDetails}
-              setShowThankYou={setShowThankYou}
-            />
-          </div>
-        )}
+        <div className="lg:flex lg:items-center lg:justify-around 2xl:justify-start">
+          {showThankYou ? (
+            <div className="px-6 mt-[91px] flex justify-center lg:mt-0">
+              <ThankYou setShowThankYou={setShowThankYou} />
+            </div>
+          ) : (
+            <div className="flex justify-center px-6 mt-[91px] lg:mt-0">
+              <CardDetailsForm
+                setCardDetails={setCardDetails}
+                cardDetails={cardDetails}
+                setShowThankYou={setShowThankYou}
+              />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
