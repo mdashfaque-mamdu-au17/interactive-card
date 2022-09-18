@@ -11,11 +11,12 @@ Users should be able to:
 - View the optimal layout depending on their device's screen size
 - See hover, active, and focus states for interactive elements on the page
 
-### Screenshot
+### Screenshot![Screenshot 2022-09-18 at 23-40-39 React App](https://user-images.githubusercontent.com/77242783/190923085-863a6091-8a64-40ba-be6d-bd4c5fa55ace.png)
+
 
 ### Links
 
-- Deployed URL:
+- Deployed URL: https://interactive-self.vercel.app/
 
 ### Built with
 
