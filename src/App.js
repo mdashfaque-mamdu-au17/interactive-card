@@ -27,8 +27,8 @@ function App() {
     }
   }, [showThankYou]);
   return (
-    <div className="font-spaceGrotesk">
-      <div className="lg:grid lg:grid-cols-2">
+    <main className="font-spaceGrotesk">
+      <section className="lg:grid lg:grid-cols-2">
         <div>
           <CardAnimate cardDetails={cardDetails} />
         </div>
@@ -48,8 +48,8 @@ function App() {
             </div>
           )}
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 
